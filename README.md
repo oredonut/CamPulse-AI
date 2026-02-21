@@ -4,52 +4,49 @@ Data to Prevention: AI as Your Health Partner for Students
 
 ## Overview
 
-CampusPulse AI is a predictive burnout prevention system designed specifically for students to maintain better academic performance.
-Unlike traditional wellness trackers that monitor daily habits, CampusPulse AI analyzes multi-day behavioral trends to detect early instability patterns and intervene before burnout escalates.
-The system focuses on forecasting risk and enabling early preventive action to protect both student well-being and academic outcomes.
+CampusPulse AI is a predictive health and burnout prevention system designed for students.
+It focuses on maintaining physical, mental, and behavioral well-being while preventing early signs of burnout. By analyzing multi-day behavioral trends, CampusPulse AI identifies early warning signs and provides targeted interventions to help students stay healthy, balanced, and academically productive.
 
 ## Problem
 
-Student burnout does not occur suddenly.
-It builds gradually through:
+Student health is often neglected due to:
 
-* Rising stress
-* Declining sleep
-* Increasing academic workload
-* Mood instability
-* Poor nutrition habits
+* Poor sleep habits
+* Rising stress levels
+* Unhealthy nutrition
+* Mood fluctuations
+* High academic workload
 
-When unmanaged, these factors lead to decreased concentration, lower productivity, missed deadlines, and declining academic performance.
-Most students recognize burnout only after significant academic impact has already occurred.
-There is currently no lightweight, structured system that continuously models behavioral drift and predicts burnout risk early enough to preserve academic stability.
+These factors gradually undermine both health and performance. Students frequently realize the consequences only after burnout or health issues appear.
+There is currently no lightweight system that continuously monitors behavioral patterns and predicts health risks early enough to take preventive action.
 
 ## Solution
 
-CampusPulse AI uses structured daily check-ins and trend analysis to compute a dynamic Behavioral Stability Score that directly supports academic performance.
+CampusPulse AI collects daily health-related data and uses trend analysis to compute a **Behavioral Stability Score**, identifying potential health risks before they escalate.
 
 The system:
 
-1. Collects 1 to 5 scaled daily inputs:
+1. Collects 1–5 scaled daily inputs:
 
    * Stress
    * Sleep
    * Mood
-   * Academic workload
    * Nutrition
+   * Academic workload (for context)
 
-2. Normalizes values to a 0 to 1 scale.
+2. Normalizes values to a 0–1 scale.
 
-3. Calculates multi-day behavioral trends.
+3. Calculates multi-day trends to detect early warning signals.
 
 4. Generates a weighted Risk Score.
 
-5. Predicts a Burnout Risk Window:
+5. Predicts a **Health Risk Window**:
 
    * Low Risk
    * Moderate Risk
    * High Risk
 
-6. Triggers targeted micro-interventions designed to restore balance and prevent academic decline.
+6. Provides targeted interventions to restore balance and improve overall health.
 
 ## AI Model Architecture
 
@@ -57,19 +54,19 @@ CampusPulse AI uses a deterministic predictive model optimized for clarity and s
 
 ### Step 1: Normalization
 
-All 1 to 5 inputs are converted to a 0 to 1 scale:
+Daily inputs on a 1–5 scale are converted to 0–1:
 
 normalized = (value - 1) / 4
 
 ### Step 2: Trend Analysis
 
-Short-term behavioral velocity is computed as:
+Short-term behavioral trends are computed:
 
 trend = today_value - average(last_3_days)
 
-An increasing stress or workload trend raises risk.
-A declining sleep trend raises risk.
-Mood volatility contributes to instability scoring.
+* Increasing stress or workload → raises health risk
+* Declining sleep → raises health risk
+* Mood volatility → contributes to instability
 
 ### Step 3: Weighted Risk Model
 
@@ -80,39 +77,40 @@ Risk Score =
 (0.15 × Mood Volatility) +
 (0.10 × Nutrition Instability)
 
-The final score maps to:
+Risk Score is mapped to:
 
-* 0.00 to 0.39  → Low Risk
-* 0.40 to 0.69  → Moderate Risk
-* 0.70 to 1.00  → High Risk
+* 0.00 to 0.39 → Low Health Risk
+* 0.40 to 0.69 → Moderate Health Risk
+* 0.70 to 1.00 → High Health Risk
 
-This enables preventive intervention before burnout negatively impacts academic performance.
+This score triggers early preventive interventions to maintain health and prevent burnout.
 
 ## Core Features
 
-* Daily 1 to 5 Behavioral Check-In
+* Daily 1–5 Health Check-In
 * Behavioral Stability Score
-* Burnout Risk Window Prediction
-* Targeted Micro-Interventions
-* Weekly Trend Visualization
-* Academic Deadline Logging
+* Health Risk Window Prediction
+* Targeted Micro-Interventions for physical and mental well-being
+* Weekly Health Trend Visualization
+* Academic Workload Logging for context
 * Preventive Health Insights
 
 ## Why It Matters
 
-CampusPulse AI transforms passive tracking into active prevention.
+CampusPulse AI transforms passive tracking into **active health prevention**.
 
-By detecting instability windows early, students receive:
+By detecting instability early, students can:
 
-* Actionable insights
-* Targeted preventive actions
-* Early warnings before performance decline
+* Improve sleep, nutrition, and mood habits
+* Reduce stress levels
+* Prevent health deterioration
+* Maintain both well-being and academic performance
 
-The result is improved consistency, healthier study patterns, and stronger academic performance over time.
+This positions AI as a proactive health partner, not just a tracker.
 
 ## Tech Stack
 
-* Frontend: React Native
+* Frontend: React Native or Flutter
 * Backend: Firebase Firestore
 * Authentication: Firebase Auth
 * Data Modeling: Structured daily logs
@@ -121,10 +119,7 @@ The result is improved consistency, healthier study patterns, and stronger acade
 ## Future Improvements
 
 * Adaptive weight tuning based on user history
-* Real-time wearable integration
-* Dataset-backed calibration
+* Integration with wearable health devices
+* Data-driven calibration for predictive accuracy
 * Machine learning refinement
-* Institutional dashboard for campus-wide academic performance analytics
-
-planation so it sounds even more technically sophisticated without making it harder to build.
-
+* Campus-wide health analytics dashboards
