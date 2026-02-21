@@ -1,97 +1,130 @@
-# Lifeline
-Campus Stability AI
+# CampusPulse AI
 
-Campus Stability AI is an AI-powered lifestyle intelligence app designed specifically for university students. It helps students track, analyze, and optimize their academic workload, emotional well-being, sleep patterns, and social life to prevent burnout and maintain peak campus performance.
+Data to Prevention: AI as Your Health Partner for Students
 
-Problem Statement
+## Overview
 
-University students face fluctuating academic pressure, irregular routines, and emotional instability throughout the semester. Existing tools focus on either productivity, fitness, or mood tracking individually but fail to connect these areas to detect burnout early or offer actionable insights. Students often realize they are overwhelmed too late, resulting in poor performance and emotional strain.
+CampusPulse AI is a predictive burnout prevention system designed specifically for students to maintain better academic performance.
+Unlike traditional wellness trackers that monitor daily habits, CampusPulse AI analyzes multi-day behavioral trends to detect early instability patterns and intervene before burnout escalates.
+The system focuses on forecasting risk and enabling early preventive action to protect both student well-being and academic outcomes.
 
-Solution Statement
+## Problem
 
-Campus Stability AI provides a unified platform that:
+Student burnout does not occur suddenly.
+It builds gradually through:
 
-Tracks academic workload, sleep, stress, mood, and social balance.
+* Rising stress
+* Declining sleep
+* Increasing academic workload
+* Mood instability
+* Poor nutrition habits
 
-Detects patterns and correlations between habits and well-being.
+When unmanaged, these factors lead to decreased concentration, lower productivity, missed deadlines, and declining academic performance.
+Most students recognize burnout only after significant academic impact has already occurred.
+There is currently no lightweight, structured system that continuously models behavioral drift and predicts burnout risk early enough to preserve academic stability.
 
-Predicts burnout risk and provides actionable insights.
+## Solution
 
-Offers personalized recommendations for sustainable academic-life balance.
+CampusPulse AI uses structured daily check-ins and trend analysis to compute a dynamic Behavioral Stability Score that directly supports academic performance.
 
-The platform focuses on student-specific lifestyle intelligence, promoting self-awareness and proactive management of stress and productivity.
+The system:
 
-🎯 Key Features
-1. Smart Academic Tracker
+1. Collects 1 to 5 scaled daily inputs:
 
-Log assignments, exams, and study hours.
+   * Stress
+   * Sleep
+   * Mood
+   * Academic workload
+   * Nutrition
 
-Detect workload clusters and potential high-stress periods.
+2. Normalizes values to a 0 to 1 scale.
 
-AI-generated alerts: “3 major deadlines this week — burnout risk increasing.”
+3. Calculates multi-day behavioral trends.
 
-2. Daily Stability Check-In
+4. Generates a weighted Risk Score.
 
-Quick 30–60 second check-in: mood, stress, energy, sleep, academic pressure.
+5. Predicts a Burnout Risk Window:
 
-Optional text reflection with AI analysis for emotional insight.
+   * Low Risk
+   * Moderate Risk
+   * High Risk
 
-3. Burnout Radar™
+6. Triggers targeted micro-interventions designed to restore balance and prevent academic decline.
 
-Visual indicator of burnout risk: Stable, Strained, High Risk.
+## AI Model Architecture
 
-Combines sleep trends, stress patterns, mood volatility, and workload spikes.
+CampusPulse AI uses a deterministic predictive model optimized for clarity and speed.
 
-4. Exam Mode Detection
+### Step 1: Normalization
 
-Detects periods of high academic pressure.
+All 1 to 5 inputs are converted to a 0 to 1 scale:
 
-Offers smart reminders, micro-break suggestions, and sleep protection alerts.
+normalized = (value - 1) / 4
 
-5. Weekly Campus Report
+### Step 2: Trend Analysis
 
-Overview of study hours, sleep patterns, mood trends, and stress levels.
+Short-term behavioral velocity is computed as:
 
-Highlights hidden patterns and behavioral loops.
+trend = today_value - average(last_3_days)
 
-6. Campus Stability Index
+An increasing stress or workload trend raises risk.
+A declining sleep trend raises risk.
+Mood volatility contributes to instability scoring.
 
-A single 0–100 score representing overall student stability.
+### Step 3: Weighted Risk Model
 
-Blends academic load, emotional health, sleep consistency, and social balance.
+Risk Score =
+(0.30 × Stress Trend) +
+(0.25 × Sleep Decline Rate) +
+(0.20 × Workload Intensity) +
+(0.15 × Mood Volatility) +
+(0.10 × Nutrition Instability)
 
-User Flow
+The final score maps to:
 
-Onboarding
+* 0.00 to 0.39  → Low Risk
+* 0.40 to 0.69  → Moderate Risk
+* 0.70 to 1.00  → High Risk
 
-Enter year of study, course load intensity, and primary goals.
+This enables preventive intervention before burnout negatively impacts academic performance.
 
-Daily Interaction
+## Core Features
 
-Morning quick check-in.
+* Daily 1 to 5 Behavioral Check-In
+* Behavioral Stability Score
+* Burnout Risk Window Prediction
+* Targeted Micro-Interventions
+* Weekly Trend Visualization
+* Academic Deadline Logging
+* Preventive Health Insights
 
-Evening optional reflection.
+## Why It Matters
 
-Academic Logging
+CampusPulse AI transforms passive tracking into active prevention.
 
-Add assignments/exams with due dates and difficulty.
+By detecting instability windows early, students receive:
 
-Dashboard
+* Actionable insights
+* Targeted preventive actions
+* Early warnings before performance decline
 
-View Campus Stability Index, Burnout Radar, upcoming deadlines, and trends.
+The result is improved consistency, healthier study patterns, and stronger academic performance over time.
 
-Insights
+## Tech Stack
 
-Receive weekly AI-generated analysis and actionable recommendations.
+* Frontend: React Native
+* Backend: Firebase Firestore
+* Authentication: Firebase Auth
+* Data Modeling: Structured daily logs
+* AI Engine: Rule-based weighted predictive model
 
-How It Works
+## Future Improvements
 
-Collects structured daily logs and academic events.
+* Adaptive weight tuning based on user history
+* Real-time wearable integration
+* Dataset-backed calibration
+* Machine learning refinement
+* Institutional dashboard for campus-wide academic performance analytics
 
-AI analyzes trends and correlations between sleep, stress, study hours, mood, and social activity.
+planation so it sounds even more technically sophisticated without making it harder to build.
 
-Detects patterns like:
-
-Late-night studying → Sleep decline → Stress ↑ → Mood ↓ → Cycle repeat.
-
-Predicts burnout probability and provides recommendations to prevent performance decline.
