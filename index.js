@@ -3,7 +3,11 @@ const admin = require("firebase-admin");
 
 admin.initializeApp();
 const db = admin.firestore();
+const OpenAI = require("openai");
 
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
 /* =========================
    UTILITY FUNCTIONS
 ========================= */

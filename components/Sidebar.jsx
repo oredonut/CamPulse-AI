@@ -6,6 +6,7 @@ const NAV = [
   { id: 'planner',   icon: '▦', label: 'Academic Planner' },
   { id: 'insights',  icon: '◆', label: 'AI Insights' },
   { id: 'profile',   icon: '◎', label: 'Profile & Goals' },
+  { id: 'chat', icon: '🤖', label: 'AI Assistant' },
 ]
 
 export default function Sidebar() {

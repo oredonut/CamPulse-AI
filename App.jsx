@@ -7,6 +7,7 @@ import CheckIn from './pages/CheckIn'
 import Planner from './pages/Planner'
 import Insights from './pages/Insights'
 import Profile from './pages/Profile'
+import ChatBot from './components/ChatBot'
 
 
 import {db} from './firebase';
@@ -59,6 +60,7 @@ function AppInner() {
           ))}
         </div>
       </nav>
+      <ChatBot />
       <Toast />
     </div>
   )
