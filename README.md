@@ -1,10 +1,10 @@
-# CampusPulse AI
+# CamPulse AI
 
 Data to Prevention: AI as Your Health Partner for Students
 
 ## Overview
 
-CampusPulse AI is a predictive health and burnout prevention system designed for students.
+CamPulse AI is a predictive health and burnout prevention system designed for students.
 It focuses on maintaining physical, mental, and behavioral well-being while preventing early signs of burnout. By analyzing multi-day behavioral trends, CampusPulse AI identifies early warning signs and provides targeted interventions to help students stay healthy, balanced, and academically productive.
 
 ## Problem
@@ -22,7 +22,7 @@ There is currently no lightweight system that continuously monitors behavioral p
 
 ## Solution
 
-CampusPulse AI collects daily health-related data and uses trend analysis to compute a **Behavioral Stability Score**, identifying potential health risks before they escalate.
+CamPulse AI collects daily health-related data and uses trend analysis to compute a **Behavioral Stability Score**, identifying potential health risks before they escalate.
 
 The system:
 
@@ -97,7 +97,7 @@ This score triggers early preventive interventions to maintain health and preven
 
 ## Why It Matters
 
-CampusPulse AI transforms passive tracking into **active health prevention**.
+CamPulse AI transforms passive tracking into **active health prevention**.
 
 By detecting instability early, students can:
 
